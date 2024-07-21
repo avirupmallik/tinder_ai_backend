@@ -42,7 +42,7 @@ public class TinderAiBackendApplication implements CommandLineRunner {
 				"foo.jpg",
 				"INTP"
 		);
-
+		profileRepository.save(profile);
 		 profile = new Profile(
 				"2",
 				"Rahul",

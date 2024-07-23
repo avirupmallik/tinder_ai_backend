@@ -36,7 +36,6 @@ public class ProfileCreationService {
     private static final String STABLE_DIFFUSION_URL = "https://fe97a6a77c5448ab52.gradio.live/sdapi/v1/txt2img";
 
     private OpenAiChatModel chatClient;
-
     private HttpClient httpClient;
 
     private HttpRequest.Builder stableDiffusionRequestBuilder;

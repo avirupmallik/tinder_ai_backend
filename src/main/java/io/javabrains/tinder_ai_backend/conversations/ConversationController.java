@@ -14,14 +14,12 @@ public class ConversationController {
 
     private final ConversationRepository conversationRepository;
     private final ProfileRepository profileRepository;
-    //private final ConversationService conversationService;
+    private final ConversationService conversationService;
 
-    public ConversationController(ConversationRepository conversationRepository, ProfileRepository profileRepository
-                                  //ConversationService conversationService
-                                  ) {
+    public ConversationController(ConversationRepository conversationRepository, ProfileRepository profileRepository, ConversationService conversationService) {
         this.conversationRepository = conversationRepository;
         this.profileRepository = profileRepository;
-        //this.conversationService = conversationService;
+        this.conversationService = conversationService;
     }
 
     @CrossOrigin(origins = "*")
@@ -69,7 +67,7 @@ public class ConversationController {
                 LocalDateTime.now()
         );
         conversation.messages().add(messageWithTime);
-       // conversationService.generateProfileResponse(conversation, profile, user);
+        conversationService.generateProfileResponse(conversation, profile, user);
         conversationRepository.save(conversation);
         return conversation;
 
